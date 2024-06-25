@@ -5,8 +5,8 @@ public class StatsService {
     //1. Сервис для рассчёта суммы всех продаж за месяц
     public int salesAmount(int[] sales) {
         int sum = 0;
-        for (int i = 0; i < sales.length; i++) {
-            sum = sum + sales[i];
+        for (int sale : sales) {
+            sum = sum + sale;
         }
         return sum;
     }
@@ -15,8 +15,8 @@ public class StatsService {
     public int calcAverage(int[] sales) {
         int average = 0;
         int sum = 0;
-        for (int i = 0; i < sales.length; i++) {
-            sum = sum + sales[i];
+        for (int sale : sales) {
+            sum = sum + sale;
             average = sum / sales.length;
         }
         return average;
@@ -53,8 +53,8 @@ public class StatsService {
         int belowAverage = 0;
         int saleAverage = calcAverage(sales);
 
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < saleAverage) {
+        for (int sale : sales) {
+            if (sale < saleAverage) {
                 belowAverage++;
             }
 
@@ -63,21 +63,17 @@ public class StatsService {
 
     }
 
+    //6. Сервис для рассчёта количества месяцев, в которых продажи были выше среднего
     public int getSalesAboveAverage(int[] sales) {
         int aboveAverage = 0;
         int saleAverage = calcAverage(sales);
 
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > saleAverage ) {
+        for (int sale : sales) {
+            if (sale > saleAverage) {
                 aboveAverage++;
             }
         }
         return aboveAverage;
     }
-
-
-    //6. Сервис для рассчёта количества месяцев, в которых продажи были выше среднего
-    //above average
-
 
 }
