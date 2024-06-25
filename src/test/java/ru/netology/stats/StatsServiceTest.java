@@ -10,9 +10,9 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
 
         //данные о продажах по месяцам
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int[] sales = {1, 15, 18, 15, 7, 20, 9, 20, 7, 14, 14, 18};
 
-        int expectedSum = 180;
+        int expectedSum = 158;
         int actualSum = service.salesAmount(sales);
 
         Assertions.assertEquals(expectedSum, actualSum);
@@ -23,9 +23,9 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
 
         //данные о продажах по месяцам
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int[] sales = {8, 1, 3, 15, 7, 20, 19, 6, 7, 18, 14, 2};
 
-        int expectedAverage = 15;
+        int expectedAverage = 10;
         int actualAverage = service.calcAverage(sales);
 
         Assertions.assertEquals(expectedAverage, actualAverage);
