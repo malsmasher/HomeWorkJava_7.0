@@ -10,10 +10,10 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
 
         //данные о продажах по месяцам
-        int[] sales = {1, 15, 18, 15, 7, 20, 9, 20, 7, 14, 14, 18};
+        long[] sales = {1, 15, 18, 15, 7, 20, 9, 20, 7, 14, 14, 18};
 
-        int expectedSum = 158;
-        int actualSum = service.salesAmount(sales);
+        long expectedSum = 158;
+        long actualSum = service.salesAmount(sales);
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
@@ -23,10 +23,10 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
 
         //данные о продажах по месяцам
-        int[] sales = {8, 1, 3, 15, 7, 20, 19, 6, 7, 18, 14, 2};
+        long[] sales = {8, 1, 3, 15, 7, 20, 19, 6, 7, 18, 14, 2};
 
-        int expectedAverage = 10;
-        int actualAverage = service.calcAverage(sales);
+        long expectedAverage = 10;
+        long actualAverage = service.calcAverage(sales);
 
         Assertions.assertEquals(expectedAverage, actualAverage);
     }
@@ -36,9 +36,9 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
 
         //данные о продажах по месяцам
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedMaxMonth = 7;
+        int expectedMaxMonth = 8;
         int actualMaxMonth = service.getMaxSalesMonth(sales);
 
 
@@ -51,7 +51,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
 
         //данные о продажах по месяцам
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedMinMonth = 8;
         int actualMinMonth = service.getMinSalesMonth(sales);
@@ -64,7 +64,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
 
         //данные о продажах по месяцам
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedQuantityB = 5;
         int actualQuantityB = service.getSalesBelowAverage(sales);
@@ -77,7 +77,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
 
         //данные о продажах по месяцам
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedQuantityA = 5;
         int actualQuantityA = service.getSalesAboveAverage(sales);
